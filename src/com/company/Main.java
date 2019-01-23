@@ -25,7 +25,7 @@ public class Main {
 
         for (int i = 0; i < dailyAverageTemp.length; i++){
             dailyAverageTemp[i] = temp.nextDouble();
-            System.out.println("The counter is at" + counter + "\nThe daily average temperature for the day entered is: " + dailyAverageTemp[i]);
+            System.out.println("The counter is at" + i + "\nThe daily average temperature for the day entered is: " + dailyAverageTemp[i]);
         }
 
     }
