@@ -19,9 +19,9 @@ public class Main {
         Temperature[] dailyAverageTemp = new Temperature[7];
         double weeklyAvgTemp = 0;
         double averageTempTotals = 0;
-        double[] dailyAverageTempCelsius = new double [7];
+        //double[] dailyAverageTempCelsius = new double [7];
         int day = 1;
-        double averageTempTotalsInCelsius = 0;
+        //double averageTempTotalsInCelsius = 0;
         double weeklyAvgTempInCelsius = 0;
 
         Scanner temp = new Scanner(System.in);
@@ -40,6 +40,8 @@ public class Main {
 
             weeklyAvgTemp = averageTempTotals/(i+1);
 
+            weeklyAvgTempInCelsius = userTemp.convertToCelsius(weeklyAvgTemp);
+
         }
 
         for(Temperature temperature: dailyAverageTemp) {
@@ -48,7 +50,9 @@ public class Main {
             day++;
         }
 
-        System.out.println("\nThe average temperature in Fahrenheit for the week is " + weeklyAvgTemp + "\n");
+        System.out.println("The average temperature in Fahrenheit for the week is " + weeklyAvgTemp);
+
+        System.out.println("The average temperature in Celsius for the week is " + weeklyAvgTempInCelsius);
 
     }
 
