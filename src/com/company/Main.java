@@ -19,11 +19,15 @@ public class Main {
         double[] dailyAverageTemp = new double[7];
         double weeklyAvgTemp = 0;
         double averageTempTotals = 0;
+        double[] dailyAverageTempCelsius = new double [7];
+        int day = 0;
+        double averageTempTotalsInCelsius = 0;
+        double weeklyAvgTempInCelsius = 0;
 
         Scanner temp = new Scanner(System.in);
 
         for (int i = 0; i < dailyAverageTemp.length; i++){
-            System.out.println("Please enter the average daily temperature for day " + (i+1) + ".");
+            System.out.println("Please enter the average temperature for day " + (i+1) + ".");
 
             dailyAverageTemp[i] = temp.nextDouble();
 
@@ -31,9 +35,24 @@ public class Main {
 
             weeklyAvgTemp = averageTempTotals/(i+1);
 
-            System.out.println("The daily average temperature you entered for day " + (i+1) + " is " + dailyAverageTemp[i] +
+            System.out.println("The average temperature you entered for day " + (i+1) + " is " + dailyAverageTemp[i] +
                     "\nThe running daily average temperature for the week is " + weeklyAvgTemp + ".\n\n");
         }
 
+        //(Fahrenheit - 32) / 1.8 = Celsius
+
+        for(double temperature: dailyAverageTemp){
+
+            dailyAverageTempCelsius[day] = (temperature - 32) / 1.8;
+
+            averageTempTotalsInCelsius+=dailyAverageTempCelsius[day];
+
+            weeklyAvgTempInCelsius = averageTempTotalsInCelsius/(day+1);
+
+            System.out.println("On day " + (day+1) + " the temperature in Fahrenheit is " + temperature + " and the temperature in Celsius is " + dailyAverageTempCelsius[day]);
+            day++;
+        }
+        System.out.println("\nThe average temperature for the week in Fahrenheit is " + weeklyAvgTemp);
+        System.out.println("The average temperature for the week in Celsius is " + weeklyAvgTempInCelsius);
     }
 }
