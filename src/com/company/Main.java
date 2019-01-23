@@ -35,8 +35,8 @@ public class Main {
 
             weeklyAvgTemp = averageTempTotals/(i+1);
 
-            System.out.println("The average temperature you entered for day " + (i+1) + " is " + dailyAverageTemp[i] +
-                    "\nThe running daily average temperature for the week is " + weeklyAvgTemp + ".\n\n");
+            /*System.out.println("The average temperature you entered for day " + (i+1) + " is " + dailyAverageTemp[i] +
+                    "\nThe running daily average temperature for the week is " + weeklyAvgTemp + ".\n\n");*/
         }
 
         //(Fahrenheit - 32) / 1.8 = Celsius
@@ -52,7 +52,8 @@ public class Main {
             System.out.println("On day " + (day+1) + " the temperature in Fahrenheit is " + temperature + " and the temperature in Celsius is " + dailyAverageTempCelsius[day]);
             day++;
         }
+
         System.out.println("\nThe average temperature for the week in Fahrenheit is " + weeklyAvgTemp);
-        System.out.println("The average temperature for the week in Celsius is " + weeklyAvgTempInCelsius);
+        System.out.println("The average temperature for the week in Celsius is " + weeklyAvgTempInCelsius + ".");
     }
 }
